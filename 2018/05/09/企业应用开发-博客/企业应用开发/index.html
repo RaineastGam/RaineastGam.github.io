@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="个人博客"><title> | Raineast's Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Raineast's Blog</h1><a id="logo" href="/.">Raineast's Blog</a><p class="description">缄默寡言，持续掉色</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">May 9, 2018</div><div class="post-content"><h1 id="需求报告"><a href="#需求报告" class="headerlink" title="需求报告"></a>需求报告</h1><h3 id="“日常掉线”小组成员介绍"><a href="#“日常掉线”小组成员介绍" class="headerlink" title="“日常掉线”小组成员介绍"></a>“日常掉线”小组成员介绍</h3><ul>
+<li>龚士博　小组核心输出位，专克疑难杂症，复杂调研过程的展开和结果的整合</li>
+<li>郭强　小组辅助位，负责提供技术支持和辅助c位输出</li>
+<li>黄德军　小组临时工</li>
+<li>甘润东　小组临时工</li>
+</ul>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>第一次调研的成果是需求报告。我组对项目需求的理解大致如下：</p>
+<p>需要这个项目的角色和他们需要的功能：</p>
+<ul>
+<li>订单上游（销售部门）<ul>
+<li>录入订单</li>
+</ul>
+</li>
+<li>领料人员<ul>
+<li>领取领料单</li>
+<li>当领取领料单后：持领料单去仓库领料</li>
+</ul>
+</li>
+<li>仓库管理<ul>
+<li>当有人领料时：核实领料单，配件出库，生成出库单和出库记录</li>
+<li>当存料少于某警戒线时：启动采购机制</li>
+<li>当采购结束时：依据采购结果入库，生成入库单及记录</li>
+</ul>
+</li>
+<li>采购人员<ul>
+<li>查询仓库剩余情况</li>
+<li>当仓库库存低于警戒线时：提醒采购</li>
+<li>依据仓库剩余情况产生采购单</li>
+<li>当采购结束时：录入采购结果</li>
+</ul>
+</li>
+<li>财务人员<ul>
+<li>当采购人员申请时：核实采购单的真伪，记录并提供资金</li>
+<li>当采购结束时：依据采购结果，收回剩余资金，记录本次使用的资金量</li>
+<li>当月底或年底统计时：获得所有订单及其收入、成本等</li>
+</ul>
+</li>
+<li>研发人员<ul>
+<li>查看BOM表</li>
+<li>修改BOM或将一件产品使用替代品、将一件产品投入试生产</li>
+<li>提出领料，领取领料单</li>
+</ul>
+</li>
+</ul>
+<p>在这个基础上对系统的需求进行分解和调整：</p>
+<ul>
+<li>录入订单和领取领料单间需要系统进行订单分解</li>
+<li>系统应当可以核对领料单和出库单，入库单和采购单和采购报账之间的联系</li>
+<li>仓库可以计算现存数量</li>
+</ul>
+<h2 id="系统组成"><a href="#系统组成" class="headerlink" title="系统组成"></a>系统组成</h2><p>依据这个项目的所需功能，我组将系统分为以下部分：</p>
+<p><img src="/img/naotu.png" alt="需求调查脑图"></p>
+<p>pdf下载地址：<a href="生产管理系统-需求调查-脑图.pdf">生产管理系统-需求调查-脑图</a></p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>对一次典型的订单，系统的工作流程：</p>
+<p><img src="liuchengtu.png" alt="流程图"></p>
+<p>pdf下载地址：<a href="生产管理系统-需求调查-流程图.pdf">生产管理系统-需求调查-流程图</a></p>
+<h2 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h2><p>需求调研（初稿）：</p>
+<p>pdf下载地址：<a href="生产管理系统-需求调查-初次调研.pdf">生产管理系统-需求调查-初次调研</a></p>
+<h1 id="系统原型"><a href="#系统原型" class="headerlink" title="系统原型"></a>系统原型</h1><p>我们采用ppt放映的方式模拟这个流程。</p>
+<h2 id="BOM界面"><a href="#BOM界面" class="headerlink" title="BOM界面"></a>BOM界面</h2><p>系统BOM查看界面（研发人员及财务人员）：<br><img src="BOM1.png" alt="BOM查看"></p>
+<p>系统BOM修改界面（研发人员）：<br><img src="BOM2.png" alt="BOM修改"></p>
+<h2 id="原料单系统"><a href="#原料单系统" class="headerlink" title="原料单系统"></a>原料单系统</h2><p>原料单管理（领料人员）：<br><img src="yuanliaodan.png" alt="原料单"></p>
+<h2 id="仓库系统"><a href="#仓库系统" class="headerlink" title="仓库系统"></a>仓库系统</h2><p>仓库出库（仓库管理员）：<br><img src="cangkuchuku.png" alt="仓库出库"></p>
+<p>仓库入库（仓库管理员）：<br><img src="cangkuruku.png" alt="仓库入库"></p>
+<h2 id="财务系统"><a href="#财务系统" class="headerlink" title="财务系统"></a>财务系统</h2><p>财务报表生成（财务人员）：<br><img src="caiwu.png" alt="财务报表"></p>
+<h2 id="采购系统"><a href="#采购系统" class="headerlink" title="采购系统"></a>采购系统</h2><p>采购单生成（采购人员）：<br><img src="caigou.png" alt="采购单生成"></p>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><p>pdf下载地址：<a href="erp_system.pdf">erp_system.pdf</a></p>
+<h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><p>依据我们的需求和原型，我们采用的数据库设计。</p>
+<p>ER图如下：</p>
+<div><br><img alt="ER图左" src="diagram1.png" style="width:60%;display:inline-block"><br><img alt="ER图右" src="diagram2.png" style="width:60%"><br></div>
+
+<p>pdf链接：<a href="光电码盘生产管理系统.pdf">光电码盘生产管理系统</a></p>
+</div><div class="tags"></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://raineast.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/09/企业应用开发-博客/企业应用开发/">企业应用开发-博客/企业应用开发</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Raineast's Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
